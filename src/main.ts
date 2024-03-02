@@ -11,6 +11,13 @@ async function bootstrap() {
   await authService.createInitialRoles()
   await authService.createInitialUser()
 
+  // Configurar CORS para permitir solicitudes desde localhost:4200
+  app.enableCors({
+    origin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+  })
+
   await app.listen(4001);
 }
 bootstrap();

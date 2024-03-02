@@ -84,7 +84,7 @@ export class UsersService {
       }
 
       // Generar un token de acceso
-      const accessToken = jwt.sign({ userId: user.id }, 'poseidon', { expiresIn: '1h' });
+      const accessToken = jwt.sign({ userId: user.id, key: 'athenea-montagas.9010' }, 'athenea', { expiresIn: '1h' });
 
       return ResponseUtil.success(
         200,
